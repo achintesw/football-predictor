@@ -63,3 +63,21 @@ Made after Phase 2 ingest. Basis: row counts and null counts only; no model resu
 1. Market benchmark: Pinnacle closing odds (PSCH/PSCD/PSCA), de-vigged (proportional; Shin as cross-check), for all seasons.
 2. A match missing Pinnacle closing odds is dropped from scoring for all models and benchmarks in that season. Phase 2 found one such match (2017/18); it is flagged in the match table, not deleted.
 3. 2025/26 holdout: Pinnacle closing odds are absent for 192 of 380 matches in the cached file. Per Section 4, the season is benchmarked on opening odds (Pinnacle PSH/PSD/PSA) and labelled as such in every results table. Opening odds are less sharp than closing odds, so gap_closed for that season may be flattered. Bars are unchanged.
+
+### Amendment 2 — 2026-11-14 (made before any 2025/26 results were scored)
+1. Finding: in the cached 2025/26 file, Pinnacle opening and closing odds are
+   null for 191/380 matches (one contiguous block, 2026-01-16 to season end).
+   Opening odds exist for 189 matches, closing for 188. Amendment 1 item 3's
+   opening-odds fallback therefore covers only 1 of the 192 closing gaps.
+2. Rule (refines Amendment 1 item 3): the 2025/26 market benchmark is computed
+   only on the 189 matches with Pinnacle opening odds (PSH/PSD/PSA), de-vigged
+   as in Amendment 1. The naive baseline and all models are scored on the same
+   189 matches for gap_closed. No substitute bookmaker is used.
+3. Bars are unchanged and applied to the 189-match result. Model RPS on all 380
+   matches is reported alongside, labelled, and not used for bar decisions.
+   Every 2025/26 results table is labelled "Pinnacle opening odds, matches
+   before 2026-01-16 only."
+4. A bootstrap interval for gap_closed on the 189-match subset is reported; it
+   does not alter any bar.
+5. For the record: 6 matches in 2014/15-2021/22 lack Pinnacle opening odds
+   (closing present). No pre-registered quantity uses them.
