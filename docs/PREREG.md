@@ -57,4 +57,9 @@ Calibration bar: max decile deviation ≤ 5 percentage points.
 - Final verdict: does the chosen model hold its bars on 2025/26? Result reported as-is.
 
 ## 9. Amendment log
-_(empty)_
+### Amendment 1 — 2026-11-14
+Made after Phase 2 ingest. Basis: row counts and null counts only; no model results seen.
+
+1. Market benchmark: Pinnacle closing odds (PSCH/PSCD/PSCA), de-vigged (proportional; Shin as cross-check), for all seasons.
+2. A match missing Pinnacle closing odds is dropped from scoring for all models and benchmarks in that season. Phase 2 found one such match (2017/18); it is flagged in the match table, not deleted.
+3. 2025/26 holdout: Pinnacle closing odds are absent for 192 of 380 matches in the cached file. Per Section 4, the season is benchmarked on opening odds (Pinnacle PSH/PSD/PSA) and labelled as such in every results table. Opening odds are less sharp than closing odds, so gap_closed for that season may be flattered. Bars are unchanged.
