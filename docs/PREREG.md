@@ -81,3 +81,9 @@ Made after Phase 2 ingest. Basis: row counts and null counts only; no model resu
    does not alter any bar.
 5. For the record: 6 matches in 2014/15-2021/22 lack Pinnacle opening odds
    (closing present). No pre-registered quantity uses them.
+
+**Amendment 3 - 2026-11-14** (made before any Phase 5 model was fit or scored; resolves wording that §5 left silent or ambiguous; no bar value is changed; approved by Ach)
+1. Pooled values: for all GO bars, RPS is the match-weighted mean over all scored matches in the 8 test seasons (n = 3,039; the one 2017/18 match without closing odds is dropped per Amendment 1). gap_closed is computed from pooled RPS_naive, RPS_model and RPS_market. Phase 4 values for reference: pooled RPS naive 0.2255, market (Pinnacle closing, proportional) 0.1929, Shin cross-check 0.1928, gap 0.0325.
+2. Units: "improvement" in the Dixon-Coles (+0.05), xG-DC (+0.03) and XGBoost (+0.03) bars means the increase in pooled gap_closed, in gap_closed points, over the comparator rung (DC vs Elo; xG-DC vs DC; XGBoost vs the best of Elo, DC and xG-DC by pooled RPS). It does not mean relative RPS reduction. Reason: gap_closed is the only quantity §5 defines, and a relative reading chained across rungs would exceed the leakage alarm (gap_closed > 1.00) for a model that only met its minimums.
+3. Consistency bar: a rung's GO requires its pooled bar and a "win" in at least 5 of 8 test seasons. A "win" is: for Elo, per-season gap_closed >= 0.50 (using that season's naive and market RPS); for DC, xG-DC and XGBoost, strictly lower RPS than the comparator rung in that season, on the same matches. A per-season margin is not required.
+4. Reporting, not bars: per-season gap_closed for every rung, and bootstrap 95% intervals (resampling matches) for pooled gap_closed and for each rung-over-rung improvement. These do not alter any bar.
